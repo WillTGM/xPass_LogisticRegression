@@ -3,13 +3,13 @@ from sklearn import linear_model
 from sklearn.metrics import mean_squared_error
 import math
 
-trainX="EPL_15_16_xPass_inputs.txt"#training data file
-trainY="EPL_15_16_xPass_success.txt"#training data success/failure
+trainX="train_inputs.txt"#training data file
+trainY="train_pass_success.txt"#training data success/failure
 
-testX="EPL_16_17_xPass_inputs.txt"#test data file
-testY="EPL_16_17_xPass_success.txt"#test data success/failure
+testX="test_inputs.txt"#test data file
+testY="test_pass_success.txt"#test data success/failure
 
-savename="xP_LogR_EPL_16_17.txt"
+savename="LogR_results.txt"
 
 def calc_xP_LogR(trainX,trainY,testX,testY):#calculate expected passes from training and test input data
 
@@ -40,5 +40,3 @@ def load_data_from_file(file):#load data from file
     data = np.delete(data, 0, 0)  # Erases the first row (i.e. the header)
     f.close()
     return data
-
-calc_xP_LogR(trainX,trainY,testX,testY)
